@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MONGODB_URI = 'mongodb://localhost/recipe-app';
+const MONGODB_URI = 'mongodb://localhost/aviation-login';
 
 mongoose.connect(MONGODB_URI)
 
