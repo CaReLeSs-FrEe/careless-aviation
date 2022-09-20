@@ -14,8 +14,9 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", (req, res, next) => {
-  // check mongo for login credentials accuracy
-  // res.render("login");
+  // 1) check mongo for login credentials accuracy
+  // 2.a) if credentials are accurate - go to their home page - res.render("home_page");
+  // 2.b) if their crednetials are inaccurate - show an error page or error message by rendering  -> res.render("error");
 });
 
 module.exports = router;
