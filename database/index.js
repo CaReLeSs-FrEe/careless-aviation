@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const MONGODB_URI = 'mongodb://localhost/aviation-login';
-
-mongoose.connect(MONGODB_URI)
+console.log(process.env.MONGODB_URI)
+mongoose.connect('mongodb+srv://carelessHacker:asdfasdf@onlinedatabase.pgitsfi.mongodb.net/test')
 
 const connection = mongoose.connection;
 

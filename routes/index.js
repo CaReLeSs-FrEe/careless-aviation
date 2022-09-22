@@ -19,4 +19,8 @@ router.post("/login", (req, res, next) => {
   // 2.b) if their crednetials are inaccurate - show an error page or error message by rendering  -> res.render("error");
 });
 
+router.get("/registry", (req, res, next) => {
+  res.render("register");
+});
+
 module.exports = router;

@@ -14,9 +14,10 @@ const express = require('express');
 const hbs = require('hbs');
 
 const app = express();
-
+app.set('trust proxy', 1)
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
+require('dotenv')
 
 // default value for title local
 const projectName = 'careless-aviation';
@@ -24,11 +25,18 @@ const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerC
 
 app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
 
+// const favicon = require('serve-favicon')
+// const path = require('path')
+ 
+// const app = express()
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+
 // 👇 Start handling routes here
 const index = require('./routes/index');
 app.use('/', index);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);
+
 
 module.exports = app;
