@@ -12,7 +12,7 @@ const express = require('express');
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require('hbs');
-
+const bodyParser = require('body-parser');
 const app = express();
 app.set('trust proxy', 1)
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
@@ -24,6 +24,8 @@ const projectName = 'careless-aviation';
 const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // const favicon = require('serve-favicon')
 // const path = require('path')

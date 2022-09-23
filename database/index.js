@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-console.log(process.env.MONGODB_URI)
-mongoose.connect('mongodb+srv://carelessHacker:asdfasdf@onlinedatabase.pgitsfi.mongodb.net/test')
+
+mongoose.connect(process.env.MONGODB_URI)
 
 const connection = mongoose.connection;
 

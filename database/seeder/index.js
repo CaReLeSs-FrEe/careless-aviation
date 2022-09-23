@@ -1,4 +1,3 @@
-require('dotenv')
 require('../')
 const UserLogin = require('./../models/Users.model')
 
